@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Brain-Architektur</title>
+<style>
+/* Ein Diagramm, oben Dienste, Mitte Rechner, unten Synology. Farben = Bereiche des Brains */
+:root{
+  --bg:#f7f7f5; --ink:#1f2422; --muted:#66706b; --line:#c9cfcc; --panel:#ffffff;
+  --brain:#4f6158; --nord:#2c6aa8; --sued:#b8731a; --ki:#5e4b8b; --nas:#2f3a36; --nasface:#e9ecea; --git:#2f7a52;
+  --font:"Segoe UI","Helvetica Neue",Arial,system-ui,sans-serif;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);font-size:15px;line-height:1.5}
+.wrap{max-width:1060px;margin:0 auto;padding:28px 16px 40px;display:grid;gap:18px}
+h1{font-size:26px;margin:0;font-weight:600;letter-spacing:-.01em}
+.sub{margin:0;color:var(--muted);max-width:72ch}
+.fig{background:var(--panel);border:1px solid var(--line);border-radius:10px;overflow-x:auto}
+svg{display:block;width:100%;min-width:820px;height:auto}
+svg text{font-family:var(--font);fill:var(--ink)}
+.h{font-size:16px;font-weight:600}
+.l{font-size:13px;fill:var(--muted)}
+.w{fill:#fff}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+.step{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:14px 16px}
+.step b{display:block;margin-bottom:4px}
+.n{display:inline-grid;place-items:center;width:22px;height:22px;border-radius:50%;background:var(--git);color:#fff;font-size:13px;margin-right:8px}
+.step p{margin:0;color:var(--muted)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Brain-Architektur mit Git-Server auf der Synology</h1>
+  <p class="sub">Das gemeinsame Wissen liegt auf dem Git-Server (Forgejo) auf der Synology. Jeder Mitarbeiter hat dort ein eigenes Konto und auf seinem Rechner eine eigene Kopie. Diese Kopie enthält nur die Bereiche, für die sein Konto freigeschaltet ist.</p>
+
+  <div class="fig">
+  <svg viewBox="0 0 1000 800" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Architekturdiagramm Brain mit Synology">
+    <defs>
+      <marker id="g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#2f7a52"/></marker>
+      <marker id="m" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#8b938f"/></marker>
+    </defs>
+
+    <!-- ===== Dienste oben ===== -->
+    <rect x="40" y="20" width="920" height="104" rx="12" fill="#f1f2f0" stroke="#d6dad8"/>
+    <text x="60" y="44" class="l">Dienste, die jeder direkt vom eigenen Rechner mit dem eigenen Login nutzt</text>
+    <g>
+      <rect x="60" y="56" width="280" height="52" rx="26" fill="#fff" stroke="#5e4b8b" stroke-width="1.5"/>
+      <text x="200" y="80" text-anchor="middle" class="h" fill="#5e4b8b" style="fill:#5e4b8b">KI-Modell</text>
+      <text x="200" y="98" text-anchor="middle" class="l">EU-Anbieter</text>
+    </g>
+    <g>
+      <rect x="360" y="56" width="280" height="52" rx="8" fill="#fff" stroke="#8b938f"/>
+      <text x="500" y="80" text-anchor="middle" class="h">Dokumente</text>
+      <text x="500" y="98" text-anchor="middle" class="l">SharePoint</text>
+    </g>
+    <g>
+      <rect x="660" y="56" width="280" height="52" rx="8" fill="#fff" stroke="#8b938f"/>
+      <text x="800" y="80" text-anchor="middle" class="h">Vektorsuche</text>
+      <text x="800" y="98" text-anchor="middle" class="l">Qdrant</text>
+    </g>
+
+    <!-- Verbindungen Rechner → Dienste -->
+    <g stroke="#8b938f" stroke-width="1.3" fill="none" stroke-dasharray="4 4">
+      <path d="M180 176 V126" marker-end="url(#m)"/>
+      <path d="M500 176 V126" marker-end="url(#m)"/>
+      <path d="M820 176 V126" marker-end="url(#m)"/>
+    </g>
+
+    <!-- ===== Rechner ===== -->
+    <!-- Laptop-Funktion: Bildschirm + Sockel -->
+    <g id="anna">
+      <rect x="45" y="178" width="270" height="196" rx="10" fill="#fff" stroke="#3a4440" stroke-width="2"/>
+      <path d="M25 374 H335 L322 390 H38 Z" fill="#3a4440"/>
+      <text x="63" y="206" class="h">Anna</text>
+      <rect x="63" y="218" width="234" height="34" rx="17" fill="#5e4b8b"/>
+      <text x="180" y="240" text-anchor="middle" class="w" style="font-size:14px;fill:#fff">KI-Assistent (opencode)</text>
+      <text x="63" y="276" class="l">eigene Brain-Kopie</text>
+      <rect x="63" y="284" width="72" height="30" rx="5" fill="#4f6158"/><text x="99" y="304" text-anchor="middle" style="font-size:13px;fill:#fff">Brain</text>
+      <rect x="141" y="284" width="100" height="30" rx="5" fill="#2c6aa8"/><text x="191" y="304" text-anchor="middle" style="font-size:13px;fill:#fff">Projekt Nord</text>
+      <text x="63" y="346" class="l">Werkzeuge: brain · Qdrant · SharePoint</text>
+    </g>
+    <g id="ben">
+      <rect x="365" y="178" width="270" height="196" rx="10" fill="#fff" stroke="#3a4440" stroke-width="2"/>
+      <path d="M345 374 H655 L642 390 H358 Z" fill="#3a4440"/>
+      <text x="383" y="206" class="h">Ben</text>
+      <rect x="383" y="218" width="234" height="34" rx="17" fill="#5e4b8b"/>
+      <text x="500" y="240" text-anchor="middle" style="font-size:14px;fill:#fff">KI-Assistent (opencode)</text>
+      <text x="383" y="276" class="l">eigene Brain-Kopie</text>
+      <rect x="383" y="284" width="72" height="30" rx="5" fill="#4f6158"/><text x="419" y="304" text-anchor="middle" style="font-size:13px;fill:#fff">Brain</text>
+      <rect x="461" y="284" width="100" height="30" rx="5" fill="#2c6aa8"/><text x="511" y="304" text-anchor="middle" style="font-size:13px;fill:#fff">Projekt Nord</text>
+      <rect x="383" y="320" width="100" height="30" rx="5" fill="#b8731a"/><text x="433" y="340" text-anchor="middle" style="font-size:13px;fill:#fff">Projekt Süd</text>
+      <text x="383" y="366" class="l">Werkzeuge: brain · Qdrant · SharePoint</text>
+    </g>
+    <g id="chris">
+      <rect x="685" y="178" width="270" height="196" rx="10" fill="#fff" stroke="#3a4440" stroke-width="2"/>
+      <path d="M665 374 H975 L962 390 H678 Z" fill="#3a4440"/>
+      <text x="703" y="206" class="h">Chris</text>
+      <rect x="703" y="218" width="234" height="34" rx="17" fill="#5e4b8b"/>
+      <text x="820" y="240" text-anchor="middle" style="font-size:14px;fill:#fff">KI-Assistent (opencode)</text>
+      <text x="703" y="276" class="l">eigene Brain-Kopie</text>
+      <rect x="703" y="284" width="72" height="30" rx="5" fill="#4f6158"/><text x="739" y="304" text-anchor="middle" style="font-size:13px;fill:#fff">Brain</text>
+      <rect x="781" y="284" width="100" height="30" rx="5" fill="#b8731a"/><text x="831" y="304" text-anchor="middle" style="font-size:13px;fill:#fff">Projekt Süd</text>
+      <text x="703" y="346" class="l">Werkzeuge: brain · Qdrant · SharePoint</text>
+    </g>
+
+    <!-- Verbindungen Rechner ⇄ Git-Server -->
+    <g stroke="#2f7a52" stroke-width="2.2" fill="none">
+      <path d="M180 396 V468" marker-start="url(#g)" marker-end="url(#g)"/>
+      <path d="M500 396 V468" marker-start="url(#g)" marker-end="url(#g)"/>
+      <path d="M820 396 V468" marker-start="url(#g)" marker-end="url(#g)"/>
+    </g>
+    <rect x="512" y="418" width="210" height="26" rx="13" fill="#fff" stroke="#2f7a52"/>
+    <text x="617" y="436" text-anchor="middle" style="font-size:13px;fill:#2f7a52">Git: holen ↓ · einreichen ↑</text>
+
+    <!-- ===== Synology ===== -->
+    <rect x="60" y="474" width="880" height="240" rx="14" fill="#2f3a36"/>
+    <!-- Laufwerksschächte -->
+    <g fill="#3f4b46" stroke="#55625c">
+      <rect x="82" y="500" width="44" height="190" rx="5"/>
+      <rect x="134" y="500" width="44" height="190" rx="5"/>
+      <rect x="186" y="500" width="44" height="190" rx="5"/>
+      <rect x="238" y="500" width="44" height="190" rx="5"/>
+    </g>
+    <g fill="#7fd3a5"><circle cx="104" cy="515" r="3"/><circle cx="156" cy="515" r="3"/><circle cx="208" cy="515" r="3"/><circle cx="260" cy="515" r="3"/></g>
+    <text x="182" y="706" text-anchor="middle" style="font-size:12px;fill:#aab7b1">Synology NAS</text>
+
+    <!-- Git-Server -->
+    <rect x="304" y="494" width="616" height="200" rx="10" fill="#e9ecea"/>
+    <text x="326" y="522" class="h">Git-Server (Forgejo)</text>
+    <text x="326" y="542" class="l">ein Konto je Mitarbeiter: Anna · Ben · Chris</text>
+
+    <g>
+      <rect x="326" y="558" width="180" height="116" rx="8" fill="#fff" stroke="#4f6158" stroke-width="2"/>
+      <rect x="326" y="558" width="180" height="30" rx="8" fill="#4f6158"/><rect x="326" y="576" width="180" height="12" fill="#4f6158"/>
+      <text x="416" y="579" text-anchor="middle" style="font-size:14px;font-weight:600;fill:#fff">Brain</text>
+      <text x="340" y="610" class="l">Firmenwissen, Abläufe,</text>
+      <text x="340" y="628" class="l">Werkzeug-Anleitungen</text>
+      <text x="340" y="658" style="font-size:13px">sichtbar für: alle</text>
+    </g>
+    <g>
+      <rect x="520" y="558" width="180" height="116" rx="8" fill="#fff" stroke="#2c6aa8" stroke-width="2"/>
+      <rect x="520" y="558" width="180" height="30" rx="8" fill="#2c6aa8"/><rect x="520" y="576" width="180" height="12" fill="#2c6aa8"/>
+      <text x="610" y="579" text-anchor="middle" style="font-size:14px;font-weight:600;fill:#fff">Projekt Nord</text>
+      <text x="534" y="610" class="l">Wissen zu Kunde /</text>
+      <text x="534" y="628" class="l">Projekt Nord</text>
+      <text x="534" y="658" style="font-size:13px">sichtbar für: Anna, Ben</text>
+    </g>
+    <g>
+      <rect x="714" y="558" width="186" height="116" rx="8" fill="#fff" stroke="#b8731a" stroke-width="2"/>
+      <rect x="714" y="558" width="186" height="30" rx="8" fill="#b8731a"/><rect x="714" y="576" width="186" height="12" fill="#b8731a"/>
+      <text x="807" y="579" text-anchor="middle" style="font-size:14px;font-weight:600;fill:#fff">Projekt Süd</text>
+      <text x="728" y="610" class="l">Wissen zu Kunde /</text>
+      <text x="728" y="628" class="l">Projekt Süd</text>
+      <text x="728" y="658" style="font-size:13px">sichtbar für: Ben, Chris</text>
+    </g>
+
+    <!-- Wartung -->
+    <rect x="660" y="744" width="280" height="44" rx="8" fill="#fff" stroke="#8b938f" stroke-dasharray="4 4"/>
+    <text x="800" y="764" text-anchor="middle" style="font-size:14px;font-weight:600">Wartung: servas / Gabriel</text>
+    <text x="800" y="781" text-anchor="middle" class="l">über eigenen Wartungszugang (Tailscale)</text>
+    <path d="M800 744 V716" stroke="#8b938f" stroke-width="1.3" stroke-dasharray="4 4" fill="none" marker-end="url(#m)"/>
+  </svg>
+  </div>
+
+  <div class="steps">
+    <div class="step"><b><span class="n">1</span>Holen</b><p>Beim Start holt der KI-Assistent den neuesten Stand vom Git-Server, aber nur die Bereiche, die das Konto sehen darf.</p></div>
+    <div class="step"><b><span class="n">2</span>Arbeiten</b><p>Der KI-Assistent liest und schreibt in der eigenen Kopie auf dem Rechner. Dokumente und Vektorsuche nutzt er mit dem Login des Mitarbeiters.</p></div>
+    <div class="step"><b><span class="n">3</span>Einreichen</b><p>Neues Wissen geht zurück auf den Git-Server. Der KI-Assistent zeigt vorher, wer es danach sieht; der Mitarbeiter bestätigt selbst.</p></div>
+  </div>
+</div>
+</body>
+</html>

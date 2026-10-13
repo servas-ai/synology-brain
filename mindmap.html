@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Brain-Mindmap</title>
+<style>
+body{margin:0;background:#f7f7f5;color:#1f2422;font-family:"Segoe UI","Helvetica Neue",Arial,system-ui,sans-serif}
+.wrap{max-width:1400px;margin:0 auto;padding:28px 16px 40px;display:grid;gap:14px}
+h1{font-size:26px;margin:0;font-weight:600}
+p{margin:0;color:#66706b;max-width:75ch}
+.fig{background:#fff;border:1px solid #c9cfcc;border-radius:10px;overflow-x:auto}
+svg{display:block;width:100%;min-width:1000px;height:auto}
+svg text{font-family:inherit;fill:#1f2422}
+</style></head><body><div class="wrap">
+<h1>Brain mit Git-Server auf der Synology</h1>
+<p>Grundsatz: Jeder sieht nur, wofür sein eigenes Konto freigeschaltet ist. Es gibt keinen zentralen Dienst, der für alle mitliest.</p>
+<div class="fig"><svg viewBox="-40 90 1480 680" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Mindmap Brain">
+<path d="M700 430 C 580.0 430, 580.0 190, 460 190" stroke="#5e4b8b" stroke-width="5" fill="none" stroke-linecap="round" opacity=".85"/>
+<path d="M700 430 C 565.0 430, 565.0 430, 430 430" stroke="#3d5f8a" stroke-width="5" fill="none" stroke-linecap="round" opacity=".85"/>
+<path d="M700 430 C 580.0 430, 580.0 670, 460 670" stroke="#2f7a52" stroke-width="5" fill="none" stroke-linecap="round" opacity=".85"/>
+<path d="M700 430 C 820.0 430, 820.0 190, 940 190" stroke="#b8731a" stroke-width="5" fill="none" stroke-linecap="round" opacity=".85"/>
+<path d="M700 430 C 835.0 430, 835.0 430, 970 430" stroke="#4f6158" stroke-width="5" fill="none" stroke-linecap="round" opacity=".85"/>
+<path d="M700 430 C 820.0 430, 820.0 670, 940 670" stroke="#2f3a36" stroke-width="5" fill="none" stroke-linecap="round" opacity=".85"/>
+<path d="M391 190 C 356 190, 356 132, 321 132" stroke="#5e4b8b" stroke-width="2" fill="none" opacity=".7"/>
+<rect x="81" y="115" width="240" height="34" rx="17" fill="#fff" stroke="#5e4b8b" stroke-width="1.5"/>
+<text x="201" y="137" text-anchor="middle" style="font-size:14px">eigenes Konto am Git-Server</text>
+<path d="M391 190 C 356 190, 356 190, 321 190" stroke="#5e4b8b" stroke-width="2" fill="none" opacity=".7"/>
+<rect x="73" y="173" width="248" height="34" rx="17" fill="#fff" stroke="#5e4b8b" stroke-width="1.5"/>
+<text x="197" y="195" text-anchor="middle" style="font-size:14px">eigene Kopie auf dem Rechner</text>
+<path d="M391 190 C 356 190, 356 248, 321 248" stroke="#5e4b8b" stroke-width="2" fill="none" opacity=".7"/>
+<rect x="113" y="231" width="208" height="34" rx="17" fill="#fff" stroke="#5e4b8b" stroke-width="1.5"/>
+<text x="217" y="253" text-anchor="middle" style="font-size:14px">KI-Assistent (opencode)</text>
+<rect x="391" y="168" width="139" height="44" rx="22" fill="#5e4b8b"/>
+<text x="460" y="196" text-anchor="middle" style="font-size:16px;font-weight:600;fill:#fff">Mitarbeiter</text>
+<path d="M320 430 C 285 430, 285 372, 250 372" stroke="#3d5f8a" stroke-width="2" fill="none" opacity=".7"/>
+<rect x="81" y="355" width="169" height="34" rx="17" fill="#fff" stroke="#3d5f8a" stroke-width="1.5"/>
+<text x="166" y="377" text-anchor="middle" style="font-size:14px">brain → Git-Server</text>
+<path d="M320 430 C 285 430, 285 430, 250 430" stroke="#3d5f8a" stroke-width="2" fill="none" opacity=".7"/>
+<rect x="42" y="413" width="208" height="34" rx="17" fill="#fff" stroke="#3d5f8a" stroke-width="1.5"/>
+<text x="146" y="435" text-anchor="middle" style="font-size:14px">qdrantcli → Vektorsuche</text>
+<path d="M320 430 C 285 430, 285 488, 250 488" stroke="#3d5f8a" stroke-width="2" fill="none" opacity=".7"/>
+<rect x="26" y="471" width="224" height="34" rx="17" fill="#fff" stroke="#3d5f8a" stroke-width="1.5"/>
+<text x="138" y="493" text-anchor="middle" style="font-size:14px">sharepointcli → Dokumente</text>
+<rect x="320" y="408" width="219" height="44" rx="22" fill="#3d5f8a"/>
+<text x="430" y="436" text-anchor="middle" style="font-size:16px;font-weight:600;fill:#fff">Werkzeuge am Rechner</text>
+<path d="M413 670 C 378 670, 378 612, 343 612" stroke="#2f7a52" stroke-width="2" fill="none" opacity=".7"/>
+<rect x="72" y="595" width="271" height="34" rx="17" fill="#fff" stroke="#2f7a52" stroke-width="1.5"/>
+<text x="208" y="617" text-anchor="middle" style="font-size:14px">1  holen: nur erlaubte Bereiche</text>
+<path d="M413 670 C 378 670, 378 670, 343 670" stroke="#2f7a52" stroke-width="2" fill="none" opacity=".7"/>
+<rect x="64" y="653" width="279" height="34" rx="17" fill="#fff" stroke="#2f7a52" stroke-width="1.5"/>
+<text x="204" y="675" text-anchor="middle" style="font-size:14px">2  arbeiten in der eigenen Kopie</text>
+<path d="M413 670 C 378 670, 378 728, 343 728" stroke="#2f7a52" stroke-width="2" fill="none" opacity=".7"/>
+<rect x="-22" y="711" width="365" height="34" rx="17" fill="#fff" stroke="#2f7a52" stroke-width="1.5"/>
+<text x="161" y="733" text-anchor="middle" style="font-size:14px">3  einreichen: Mitarbeiter bestätigt selbst</text>
+<rect x="413" y="648" width="94" height="44" rx="22" fill="#2f7a52"/>
+<text x="460" y="676" text-anchor="middle" style="font-size:16px;font-weight:600;fill:#fff">Ablauf</text>
+<path d="M1036 190 C 1071 190, 1071 132, 1106 132" stroke="#b8731a" stroke-width="2" fill="none" opacity=".7"/>
+<rect x="1106" y="115" width="216" height="34" rx="17" fill="#fff" stroke="#b8731a" stroke-width="1.5"/>
+<text x="1214" y="137" text-anchor="middle" style="font-size:14px">Brain: sichtbar für alle</text>
+<path d="M1036 190 C 1071 190, 1071 190, 1106 190" stroke="#b8731a" stroke-width="2" fill="none" opacity=".7"/>
+<rect x="1106" y="173" width="279" height="34" rx="17" fill="#fff" stroke="#b8731a" stroke-width="1.5"/>
+<text x="1246" y="195" text-anchor="middle" style="font-size:14px">Projekte: nur das jeweilige Team</text>
+<path d="M1036 190 C 1071 190, 1071 248, 1106 248" stroke="#b8731a" stroke-width="2" fill="none" opacity=".7"/>
+<rect x="1106" y="231" width="279" height="34" rx="17" fill="#fff" stroke="#b8731a" stroke-width="1.5"/>
+<text x="1246" y="253" text-anchor="middle" style="font-size:14px">Privates: bleibt auf dem Rechner</text>
+<rect x="844" y="168" width="192" height="44" rx="22" fill="#b8731a"/>
+<text x="940" y="196" text-anchor="middle" style="font-size:16px;font-weight:600;fill:#fff">Bereiche im Brain</text>
+<path d="M1021 430 C 1056 430, 1056 372, 1091 372" stroke="#4f6158" stroke-width="2" fill="none" opacity=".7"/>
+<rect x="1091" y="355" width="208" height="34" rx="17" fill="#fff" stroke="#4f6158" stroke-width="1.5"/>
+<text x="1196" y="377" text-anchor="middle" style="font-size:14px">KI-Modell (EU-Anbieter)</text>
+<path d="M1021 430 C 1056 430, 1056 430, 1091 430" stroke="#4f6158" stroke-width="2" fill="none" opacity=".7"/>
+<rect x="1091" y="413" width="200" height="34" rx="17" fill="#fff" stroke="#4f6158" stroke-width="1.5"/>
+<text x="1192" y="435" text-anchor="middle" style="font-size:14px">Dokumente (SharePoint)</text>
+<path d="M1021 430 C 1056 430, 1056 488, 1091 488" stroke="#4f6158" stroke-width="2" fill="none" opacity=".7"/>
+<rect x="1091" y="471" width="185" height="34" rx="17" fill="#fff" stroke="#4f6158" stroke-width="1.5"/>
+<text x="1184" y="493" text-anchor="middle" style="font-size:14px">Vektorsuche (Qdrant)</text>
+<rect x="919" y="408" width="103" height="44" rx="22" fill="#4f6158"/>
+<text x="970" y="436" text-anchor="middle" style="font-size:16px;font-weight:600;fill:#fff">Dienste</text>
+<path d="M991 670 C 1026 670, 1026 612, 1061 612" stroke="#2f3a36" stroke-width="2" fill="none" opacity=".7"/>
+<rect x="1061" y="595" width="232" height="34" rx="17" fill="#fff" stroke="#2f3a36" stroke-width="1.5"/>
+<text x="1177" y="617" text-anchor="middle" style="font-size:14px">Synology steht beim Kunden</text>
+<path d="M991 670 C 1026 670, 1026 670, 1061 670" stroke="#2f3a36" stroke-width="2" fill="none" opacity=".7"/>
+<rect x="1061" y="653" width="208" height="34" rx="17" fill="#fff" stroke="#2f3a36" stroke-width="1.5"/>
+<text x="1166" y="675" text-anchor="middle" style="font-size:14px">Backup auf der Synology</text>
+<path d="M991 670 C 1026 670, 1026 728, 1061 728" stroke="#2f3a36" stroke-width="2" fill="none" opacity=".7"/>
+<rect x="1061" y="711" width="318" height="34" rx="17" fill="#fff" stroke="#2f3a36" stroke-width="1.5"/>
+<text x="1220" y="733" text-anchor="middle" style="font-size:14px">Wartung: servas / Gabriel (Tailscale)</text>
+<rect x="889" y="648" width="103" height="44" rx="22" fill="#2f3a36"/>
+<text x="940" y="676" text-anchor="middle" style="font-size:16px;font-weight:600;fill:#fff">Betrieb</text>
+<ellipse cx="700" cy="430" rx="150" ry="74" fill="#fff" stroke="#1f2422" stroke-width="3"/>
+<text x="700" y="418" text-anchor="middle" style="font-size:24px;font-weight:700">Brain</text>
+<text x="700" y="444" text-anchor="middle" style="font-size:14px;fill:#66706b">Git-Server (Forgejo)</text>
+<text x="700" y="464" text-anchor="middle" style="font-size:14px;fill:#66706b">auf der Synology</text>
+</svg></div></div></body></html>
