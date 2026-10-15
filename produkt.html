@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Brain auf der Synology</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap">
+<style>
+/* Produktblatt: eine Akzentfarbe, Haarlinien statt Kästen, druckbar auf A4 */
+:root{
+  --bg:#ffffff; --ink:#16201c; --muted:#5f6b66; --rule:#e2e6e4; --soft:#f4f6f5;
+  --accent:#2f6b4f;
+  --font:"Inter","Segoe UI","Helvetica Neue",Arial,system-ui,sans-serif;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);font-size:16px;line-height:1.6;font-feature-settings:"cv11","ss01"}
+.page{max-width:880px;margin:0 auto;padding:56px 24px 64px}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+
+header{padding-bottom:32px;border-bottom:1px solid var(--rule)}
+.eyebrow{font-size:13px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin:0 0 14px}
+h1{font-size:40px;line-height:1.15;font-weight:600;letter-spacing:-.02em;margin:0 0 16px}
+.lead{font-size:19px;line-height:1.55;color:var(--muted);margin:0;max-width:60ch}
+
+.facts{display:grid;grid-template-columns:repeat(3,1fr);border-bottom:1px solid var(--rule)}
+.fact{padding:24px 24px 24px 0}
+.fact + .fact{padding-left:24px;border-left:1px solid var(--rule)}
+.fact b{display:block;font-weight:600;font-size:16px;margin-bottom:4px}
+.fact span{color:var(--muted);font-size:15px}
+
+section{padding:40px 0;border-bottom:1px solid var(--rule)}
+section:has(> table:last-child){padding-bottom:0}
+section > table + *{margin-top:0}
+section:last-of-type{border-bottom:0}
+h2{font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:0 0 18px}
+section > p{margin:0 0 12px;max-width:66ch}
+section > p:last-child{margin-bottom:0}
+
+figure{margin:8px 0 0}
+figure img{display:block;width:100%;height:auto;border:1px solid var(--rule);border-radius:6px}
+figcaption{font-size:14px;color:var(--muted);margin-top:10px}
+
+table{width:100%;border-collapse:collapse}
+td{padding:14px 0;border-top:1px solid var(--rule);vertical-align:top}
+td:first-child{width:34%;padding-right:24px;font-weight:500}
+td:last-child{color:var(--muted)}
+
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px 40px}
+.item b{display:block;font-weight:600;margin-bottom:2px}
+.item span{color:var(--muted);font-size:15px}
+
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:0;counter-reset:s}
+.step{padding-right:24px}
+.step + .step{padding-left:24px;border-left:1px solid var(--rule)}
+.step::before{counter-increment:s;content:"0" counter(s);display:block;font-size:13px;font-weight:600;color:var(--accent);letter-spacing:.06em;margin-bottom:8px}
+.step b{display:block;font-weight:600;margin-bottom:4px}
+.step span{color:var(--muted);font-size:15px}
+
+footer{margin-top:8px;padding-top:24px;border-top:1px solid var(--rule);font-size:14px;color:var(--muted);display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between}
+
+@media (max-width:680px){
+  .page{padding:36px 16px 48px}
+  h1{font-size:30px}
+  .lead{font-size:17px}
+  .facts,.steps,.cols{grid-template-columns:1fr}
+  .fact,.fact + .fact,.step,.step + .step{padding:16px 0;border-left:0}
+  .fact + .fact,.step + .step{border-top:1px solid var(--rule)}
+  td:first-child{width:42%}
+}
+@media print{
+  .page{padding:0;max-width:none}
+  section{break-inside:avoid}
+  a{color:var(--ink)}
+}
+</style>
+</head>
+<body>
+<main class="page">
+
+  <header>
+    <p class="eyebrow">servas.ai · Produktblatt</p>
+    <h1>Brain auf der Synology</h1>
+    <p class="lead">Das gemeinsame Firmenwissen für die KI-Assistenten Ihrer Mitarbeiter. Es liegt auf Ihrer eigenen Synology, und jeder Mitarbeiter sieht nur, wofür er freigeschaltet ist.</p>
+  </header>
+
+  <div class="facts">
+    <div class="fact"><b>Daten bleiben im Haus</b><span>Wissen und Verlauf liegen auf Ihrer Synology.</span></div>
+    <div class="fact"><b>Rechte je Mitarbeiter</b><span>Jede Person hat ein eigenes Konto.</span></div>
+    <div class="fact"><b>KI-Modell aus der EU</b><span>Angebunden über einen EU-Anbieter.</span></div>
+  </div>
+
+  <section>
+    <h2>Das Produkt</h2>
+    <p>Im Brain steht, wie Ihr Unternehmen arbeitet: Abläufe, Entscheidungen, Fehlerbilder, Ansprechpartner und wo welche Dokumente liegen. Der KI-Assistent jedes Mitarbeiters greift bei der täglichen Arbeit darauf zurück.</p>
+    <p>Was der Assistent dabei Neues erfährt, hält er im Brain fest. Der Mitarbeiter gibt es frei, danach steht es allen Berechtigten zur Verfügung. So wächst das Firmenwissen mit jeder erledigten Aufgabe.</p>
+    <figure>
+      <img src="img/mindmap.svg" alt="Mindmap: Brain auf dem Git-Server der Synology, mit Mitarbeitern, Werkzeugen, Ablauf, Bereichen, Diensten und Betrieb" width="1480" height="680">
+      <figcaption>Übersicht als <a href="mindmap.html">Mindmap</a> · Technischer Aufbau als <a href="./">Architektur-Diagramm</a></figcaption>
+    </figure>
+  </section>
+
+  <section>
+    <h2>Lieferumfang</h2>
+    <table>
+      <tr><td>Git-Server auf der Synology</td><td>Forgejo, eingerichtet auf Ihrer vorhandenen Synology. Dort liegt das gesamte Wissen, inklusive Verlauf und Backup.</td></tr>
+      <tr><td>Konto je Mitarbeiter</td><td>Eigenes Konto für jede Person. Rechte werden pro Person und Projekt vergeben.</td></tr>
+      <tr><td>Brain-Vorlage</td><td>Fertige Struktur für Firmenwissen, Projekte und private Notizen, samt Regeln, nach denen der Assistent liest und schreibt.</td></tr>
+      <tr><td>KI-Assistent</td><td>opencode auf jedem Arbeitsplatz, angebunden an ein KI-Modell eines EU-Anbieters.</td></tr>
+      <tr><td>Werkzeuge am Arbeitsplatz</td><td>Abgleich mit dem Git-Server sowie Anbindung an SharePoint und an die Vektorsuche Qdrant, jeweils mit dem Login des Mitarbeiters.</td></tr>
+      <tr><td>Einrichtung und Wartung</td><td>Durch servas.ai über einen eigenen, abgesicherten Wartungszugang (Tailscale).</td></tr>
+    </table>
+  </section>
+
+  <section>
+    <h2>Nutzen im Alltag</h2>
+    <div class="cols">
+      <div class="item"><b>Antworten statt Suchen</b><span>Der Assistent findet das passende Wissen, auch bei tausenden Einträgen.</span></div>
+      <div class="item"><b>Direkter Einstieg</b><span>Projektnummern, Normen oder Fehlercodes führen ohne Umweg zum richtigen Eintrag.</span></div>
+      <div class="item"><b>Dokumente im Zugriff</b><span>Inhalte aus SharePoint und der Vektorsuche holt der Assistent bei Bedarf dazu.</span></div>
+      <div class="item"><b>Wiederkehrende Aufgaben</b><span>Der Assistent kennt feste Abläufe und erinnert, wenn etwas fällig ist.</span></div>
+      <div class="item"><b>Schnelle Einarbeitung</b><span>Neue Kollegen fragen ihren Assistenten statt der erfahrenen Kollegen.</span></div>
+      <div class="item"><b>Wissen bleibt in der Firma</b><span>Was jemand herausfindet, steht danach allen Berechtigten zur Verfügung.</span></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Ablauf</h2>
+    <div class="steps">
+      <div class="step"><b>Holen</b><span>Beim Start holt sich der Arbeitsplatz den aktuellen Stand von der Synology.</span></div>
+      <div class="step"><b>Arbeiten</b><span>Der Mitarbeiter arbeitet mit seinem Assistenten, der das Brain nutzt und Neues festhält.</span></div>
+      <div class="step"><b>Einreichen</b><span>Der Assistent zeigt, wer die Änderung sehen wird. Der Mitarbeiter bestätigt sie selbst.</span></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Rechte und Datenschutz</h2>
+    <table>
+      <tr><td>Sichtbarkeit</td><td>Jeder sieht nur, wofür sein eigenes Konto freigeschaltet ist. Es gibt keinen zentralen Dienst, der für alle mitliest.</td></tr>
+      <tr><td>Bereiche</td><td>Firmenwissen für alle, Projekte nur für das jeweilige Team, Privates bleibt auf dem eigenen Rechner.</td></tr>
+      <tr><td>Speicherort</td><td>Ausschließlich auf Ihrer Synology, Backup ebenfalls dort.</td></tr>
+      <tr><td>Nachvollziehbarkeit</td><td>Jede Änderung ist mit Person, Zeitpunkt und Inhalt dokumentiert.</td></tr>
+    </table>
+  </section>
+
+  <section>
+    <h2>Voraussetzungen</h2>
+    <table>
+      <tr><td>Synology</td><td>Mit Container Manager.</td></tr>
+      <tr><td>Arbeitsplätze</td><td>Windows, macOS oder Linux.</td></tr>
+      <tr><td>KI-Modell</td><td>Zugang zu einem EU-Anbieter.</td></tr>
+      <tr><td>Optional</td><td>SharePoint und Qdrant, falls dort bereits Dokumente oder Suchdaten liegen.</td></tr>
+    </table>
+  </section>
+
+  <footer>
+    <span>servas.ai</span>
+    <span><a href="./">Architektur</a> · <a href="mindmap.html">Mindmap</a></span>
+  </footer>
+
+</main>
+</body>
+</html>

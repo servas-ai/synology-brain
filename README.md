@@ -2,7 +2,7 @@
 
 Architektur des Firmen-Brains mit eigenem Git-Server (Forgejo) auf der Synology des Kunden.
 
-**Interaktive Ansicht:** https://servas-ai.github.io/synology-brain/ · [Mindmap](https://servas-ai.github.io/synology-brain/mindmap.html)
+**Interaktive Ansicht:** https://servas-ai.github.io/synology-brain/ · [Mindmap](https://servas-ai.github.io/synology-brain/mindmap.html) · [Produktbeschreibung](https://servas-ai.github.io/synology-brain/produkt.html)
 
 ## Architektur
 
