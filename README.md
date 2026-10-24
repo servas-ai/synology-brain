@@ -44,9 +44,13 @@ flowchart LR
  C --> O[Answer with provenance]
 ```
 
-### 🖼️ Screenshots and visuals
+### 🖼️ Existing screenshots and visual assets
 
-Only use checked-in screenshots captured from the actual tested build. No verified runtime screenshot was found in the README during this pass; no mock screenshot is represented as production evidence.
+![Architektur](img/architektur.png)
+
+![Mindmap](img/mindmap.png)
+
+*Original repository visuals preserved. Their presence does not imply current runtime acceptance.*
 
 ### ✅ Readiness checklist
 
